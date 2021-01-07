@@ -1,1 +1,1 @@
-# citation_bias_study
+# Citation Bias Study

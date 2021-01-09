@@ -214,6 +214,16 @@ mean(g_sim.degree(vertices=negative_nodes_sim))  # 48.7
 mean(g.degree(vertices=neutral_nodes))  # 11.1
 mean(g_sim.degree(vertices=neutral_nodes_sim))  # 48.0
 
+# average in-degree overall -- as comparison to the 5-HTTLPR paper reported
+mean(g.degree(vertices=positive_nodes,mode=IN))  # 9.8
+mean(g_sim.degree(vertices=positive_nodes_sim,mode=IN))  # 31.8
+
+mean(g.degree(vertices=negative_nodes,mode=IN))  # 5.39
+mean(g_sim.degree(vertices=negative_nodes_sim,mode=IN))  # 19.7
+
+mean(g.degree(vertices=neutral_nodes,mode=IN))  # 4.27
+mean(g_sim.degree(vertices=neutral_nodes_sim, mode=IN))  # 26.0
+
 # internal edge density: 2*ms/(ns(ns-1))
 ns_positive = len(positive_nodes)
 ns_negative = len(negative_nodes)

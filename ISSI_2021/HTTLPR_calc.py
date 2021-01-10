@@ -215,7 +215,7 @@ mean(g.degree(vertices=neutral_nodes))  # 11.1
 mean(g_sim.degree(vertices=neutral_nodes_sim))  # 48.0
 
 # average in-degree overall -- as comparison to the 5-HTTLPR paper reported
-mean(g.degree(vertices=positive_nodes,mode=IN))  # 9.8
+mean(g.degree(vertices=positive_nodes,mode=IN))  # 9.83
 mean(g_sim.degree(vertices=positive_nodes_sim,mode=IN))  # 31.8
 
 mean(g.degree(vertices=negative_nodes,mode=IN))  # 5.39
@@ -334,23 +334,24 @@ len(g.es.select(_source_in=neutral_nodes.indices, _target_in=g.vs.select(outcome
 
 
 # Conductance -- directed
+# updated on Jan 8 2021, instead of using cs/(2*ms+cs) (Yang & Leskovec, 2015), we use cs/(ms+cs)
 def conductance_calc(g, in_group_nodes, out_group_nodes):
     cs = len(g.es.select(_source_in=in_group_nodes, _target_in=out_group_nodes))
     ms = len(g.es.select(_between=(in_group_nodes, in_group_nodes)))
-    return cs / (2 * ms + cs)
+    return cs / (ms + cs)
 
 
 # conductance positive nodes
-conductance_calc(g, positive_nodes, g.vs.select(outcome_ne='Positive'))  # 0.289
-conductance_calc(g_sim, positive_nodes_sim, g_sim.vs.select(outcome_ne='Positive'))
+conductance_calc(g, positive_nodes, g.vs.select(outcome_ne='Positive'))  # 0.448
+conductance_calc(g_sim, positive_nodes_sim, g_sim.vs.select(outcome_ne='Positive')) # 0.563
 
 # conductance negative nodes
-conductance_calc(g, negative_nodes, g.vs.select(outcome_ne='Negative'))  # 0.378
-conductance_calc(g_sim, negative_nodes_sim, g_sim.vs.select(outcome_ne='Negative'))  # 0.408
+conductance_calc(g, negative_nodes, g.vs.select(outcome_ne='Negative'))  # 0.549
+conductance_calc(g_sim, negative_nodes_sim, g_sim.vs.select(outcome_ne='Negative'))  # 0.580
 
 # conductance neutral nodes
-conductance_calc(g, neutral_nodes, g.vs.select(outcome_ne='Neutral'))  # 0.806
-conductance_calc(g_sim, neutral_nodes_sim, g_sim.vs.select(outcome_ne='Neutral'))  # 0.761
+conductance_calc(g, neutral_nodes, g.vs.select(outcome_ne='Unclear'))  # 0.880
+conductance_calc(g_sim, neutral_nodes_sim, g_sim.vs.select(outcome_ne='Unclear'))  # 0.842
 
 
 # odfs - directed

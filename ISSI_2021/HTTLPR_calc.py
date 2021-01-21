@@ -136,7 +136,7 @@ for node in non_medium_overlap_nodes:
 # plt.show()
 
 # PART II
-# ratio between actual citation and possible citations
+# ratio between actual citation and theoretical citations
 g_degree = pd.Series(data=g.degree(mode=IN),index=g.vs.indices)
 g_sim_degree = pd.Series(data=g_sim.degree(mode=IN),index=g_sim.vs.indices)
 
@@ -162,7 +162,7 @@ idx_high = [int(item) for item in idx_high]
 # this needs a bit of work too, get the box on
 bins = np.linspace(0,1,10)
 plt.hist(degree_ratio['degree_ratio'], bins=bins, alpha=0.5)
-plt.xlabel('Ratio between actual citations and possible citations')
+plt.xlabel('Ratio between actual citations and theoretical citations')
 plt.ylabel('Count')
 
 for node in g.vs.indices:

@@ -8,5 +8,5 @@ This folder contains Jasmine Yuan's work
 
 ## NetowrkX_migration  
 This folder contains files for the iGraph to NetworkX code migration  
-March 10, 2021: write something here what your update is. 
+March 10, 2021: write something here what your update is.  
 March 4, 2021: write something here what your update is.  

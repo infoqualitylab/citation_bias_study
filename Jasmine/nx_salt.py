@@ -7,7 +7,6 @@ attr_list = pd.read_csv("Article_attr.csv", usecols=[0, 1, 2, 3])
 
 G = nx.DiGraph()
 G.add_nodes_from(attr_list["ID"].to_list())
-#stylized_network, config = nw.visualize(G)
 
 edgelist = pd.read_csv("inclusion_net_edges.csv")
 a = edgelist["citing_ID"].to_list()
@@ -27,15 +26,19 @@ for i in attr_list["Attitude"]:
     else:
         coloring.append('blue')
 
+ID = attr_list['ID'].to_list()
 labelss = {}
 #labelss[0] = 0
 for i, val in enumerate(year):
-    labelss[i + 1] = val
+    #if i < 14:
+        labelss[ID[i]] = val
 
+print(val)
 print(labelss)
 
 nx.draw(
     G,
+    pos=nx.spring_layout(G),
     with_labels=True,
     labels=labelss,
     node_size=150,
@@ -46,3 +49,4 @@ nx.draw(
 )
 
 plt.show()
+stylized_network, config = nw.visualize(G)

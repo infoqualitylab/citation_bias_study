@@ -16,5 +16,6 @@ This folder contains codes that simulates citation networks with varied degrees 
 network_generation_toy_model.py simulates a network where a paper X published in year Y has a pre-defined probability p (derived from the observed network) to cite a paper Z published in prior years. A random number is drawn, if the random number is smaller than or equal to to the probability p, we will assign a citation relationship from X to Z.
 
 ![Observed Network](https://github.com/infoqualitylab/citation_bias_study/blob/master/NetworkSimulation/observed_network.png)
+
 Data from: de Vries, Y. A., & Munafo, M. (2016). [Dataset] Citation bias and selective focus on positive findings in the literature on 5-HTTLPR, life stress, and depression. University of Bristol. Retrieved January 28, 2021, from http://doi.org/10.5523/BRIS.Z7JCONXFBMDR1JJ3T0W4K1HWN 
 

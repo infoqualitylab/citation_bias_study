@@ -21,7 +21,7 @@ def main():
     print("Generating 5 networks")
     for i in range(5):
         g_sim = toy_network_gen(df_prob, attr_list)
-        network_vis(g_sim)
+        network_vis(g_sim, 'simulated_network' + str(i) + '.png')
 
 
 def toy_network_gen(prob, attr_list):
@@ -52,6 +52,7 @@ def toy_network_gen(prob, attr_list):
 
 def compute_p(attr_list, obs_edge_list, potential_edge_list):
     g_obs = ig.Graph.DataFrame(edges=obs_edge_list, vertices=attr_list, directed=True)
+    network_vis(g_obs, 'observed_network.png')
     g_potential = ig.Graph.DataFrame(edges=potential_edge_list, vertices=attr_list, directed=True)
 
     # compute probabilities
@@ -71,8 +72,8 @@ def compute_p(attr_list, obs_edge_list, potential_edge_list):
     return prob
 
 
-def network_vis(g_sim):
-    for vs in g_sim.vs:
+def network_vis(g, name):
+    for vs in g.vs:
         if vs['Outcome'] == 'Positive':
             vs['Color'] = 'dodgerblue'
         elif vs['Outcome'] == 'Negative':
@@ -80,12 +81,14 @@ def network_vis(g_sim):
         else:
             vs['Color'] = 'white'
 
-    vis = ig.plot(g_sim,
+    vis = ig.plot(g,
                   vertex_size=20,
-                  vertex_color=g_sim.vs['Color'],
-                  vertex_label=g_sim.vs['Label'],
-                  layout='kk')
+                  vertex_color=g.vs['Color'],
+                  vertex_label=g.vs['Label'],
+                  layout='kk',
+                  target=name)
     vis.show()
+
 
 if __name__ == '__main__':
     main()

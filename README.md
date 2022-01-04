@@ -2,6 +2,7 @@
 
 ## ISSI_2021  
 This folder contains a jupyter notebook for the calculation contained in the work-in-progress paper submitted to ISSI 2021  
+Yuanxi Fu+, Jasmine Yuan+, Jodi Schneider. “Using Citation Bias to Guide Better Sampling of Scientific Literature.” [work in progress paper] In Proceedings of the 18th International Conference on Scientometrics & Informetrics (ISSI2021), Virtual, July 2021. 419–424.
 
 ## Jasmine  
 This folder contains Jasmine Yuan's work  

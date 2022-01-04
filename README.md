@@ -20,5 +20,15 @@ network_generation_toy_model.py simulates a network where a paper X published in
 
 Data from: de Vries, Y. A., & Munafo, M. (2016). [Dataset] Citation bias and selective focus on positive findings in the literature on 5-HTTLPR, life stress, and depression. University of Bristol. Retrieved January 28, 2021, from http://doi.org/10.5523/BRIS.Z7JCONXFBMDR1JJ3T0W4K1HWN 
 
-### Simulated Network via an equal probability (bias=0) Toy Model
+### Simulated Network via an equal probability (no bias) Toy Model
 ![Simulated Network](https://github.com/infoqualitylab/citation_bias_study/blob/master/NetworkSimulation/simulated_network.png)
+
+## Zhonghe  
+This folder contains Zhonghe's work  
+
+## ResearchShowcase
+This folder contains codes that are used to produce the work in the iSchool Research Showcase poster:
+Zhonghe Wan, Yuanxi Fu, Jodi Schneider. Using citation redistribution to estimate unbiased expected citation count from a biased citation network. Poster presented at the iSchool Research Showcase, University of Illinois at Urbana Champaign, October 27, 2021. http://hdl.handle.net/2142/112794
+
+
+
